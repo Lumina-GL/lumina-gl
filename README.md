@@ -90,7 +90,7 @@ By offloading complex pixel-sorting and RGB shifting to custom **GLSL Fragment S
       Velocity-based RGB ghosting & procedural noise.
     </td>
     <td style="border: 1px solid #1a1a1a; padding: 20px;">
-      <a href="https://chroma-gallery.vercel.app/lab/elegance"><b>[ VIEW DEMO ]</b></a>
+      <a href="https://chroma-gallery.vercel.app/lab/elegance-art"><b>[ VIEW DEMO ]</b></a>
     </td>
   </tr>
    
