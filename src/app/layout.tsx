@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Sora } from "next/font/google";
 import "./globals.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import { Analytics } from "@vercel/analytics/react";
 
 const sora = Sora({
   subsets: ["latin"],
@@ -52,6 +53,7 @@ export default function RootLayout({
     >
       <body className="antialiased bg-black text-white">
         {children}
+        <Analytics />
       </body>
     </html>
   );
