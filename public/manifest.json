@@ -1,12 +1,14 @@
 {
   "name": "Chroma Gallery",
-  "short_name": "Chroma Gallery",
+  "short_name": "Chroma",
+  "description": "Immersive WebGL Lens Gallery",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#000000",
+  "theme_color": "#000000",
   "icons": [
-    {
-      "src": "/favicon-96x96.png",
-      "sizes": "96x96",
-      "type": "image/png"
-    },
     {
       "src": "/web-app-manifest-192x192.png",
       "sizes": "192x192",
@@ -19,11 +21,5 @@
       "type": "image/png",
       "purpose": "maskable any"
     }
-  ],
-   "start_url": "/?source=pwa",
-  "scope": "/",
-  "display": "standalone",
-  "orientation": "portrait",
-  "theme_color": "#000000",
-  "background_color": "#000000"
+  ]
 }
