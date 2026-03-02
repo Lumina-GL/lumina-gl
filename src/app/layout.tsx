@@ -19,25 +19,69 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Chroma Gallery - WebGL Experience",
-  description: "Immersive WebGL Gallery built with Next.js and React Three Fiber",
+  metadataBase: new URL('https://lumina-gl.sujitkoji.com'), 
+  title: {
+    default: "Lumina-GL - Digital Shader",
+    template: "%s | Lumina-GL"
+  },
+  description: "A high-end technical exhibition of GLSL shaders, fluid simulations, and interactive motion design. Crafted for the modern web.",
+  keywords: ["WebGL", "GLSL", "Three.js", "React Three Fiber", "Creative Coding", "Shader Art", "Frontend Developer"],
+  authors: [{ name: "Sujit Koji", url: "https://github.com/sujitkoji" }],
+  creator: "Sujit Koji",
+
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://lumina-gl.sujitkoji.com",
+    title: "Lumina-GL - Digital Shader Atelier",
+    description: "Immersive WebGL experiences and fluid motion simulations.",
+    siteName: "Lumina-GL",
+    images: [
+      {
+        url: "https://lumina-gl.sujitkoji.com/lumina-gl.png", 
+        width: 1200,
+        height: 630,
+        alt: "Lumina-GL Preview",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Lumina-GL - Digital Shader Atelier",
+    description: "Interactive WebGL Gallery & Shader Experiments.",
+    creator: "@sujitkoji",
+    images: ["https://lumina-gl.sujitkoji.com/lumina-gl.png"], 
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 
   icons: {
-
     icon: [
       { url: "/favicon.ico" },
-      {url: "/favicon.svg", type: "image/svg+xml"},
-      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
-      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
     ],
     apple: "/apple-touch-icon.png",
   },
-
   manifest: "/manifest.json",
 };
 
 export const viewport: Viewport = {
   themeColor: "#000000",
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1, 
 };
 
 export default function RootLayout({
@@ -48,11 +92,13 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${sora.variable}`}
+      className={`${inter.variable} ${sora.variable} scroll-smooth`}
       suppressHydrationWarning
     >
-      <body className="antialiased bg-black text-white">
-        {children}
+      <body className="antialiased bg-[#040406] text-white selection:bg-white selection:text-black">
+        <div className="flex flex-col min-h-screen">
+            {children}
+        </div>
         <Analytics />
       </body>
     </html>

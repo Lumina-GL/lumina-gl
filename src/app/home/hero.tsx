@@ -2,35 +2,8 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, useSpring, useMotionValue } from 'framer-motion';
+import {projects} from "@/app/constants/projects";
 
-const projects = [
-  {
-    id: "01",
-    title: "Liquid-Art-Wave",
-    path: "/lab/liquid-art-wave",
-  },
-
-  {
-    id: "02",
-    title: "RGB-Displacement",
-    path: "/lab/rgb-displacement",
-  },
-  {
-    id: "03",
-    title: "Spectral-Echo",
-    path: "/lab/spectral-echo",
-  }, 
-  {
-    id: "04",
-    title: "Image-Alchemy",
-    path: "/lab/image-alchemy",
-  },
-  {
-    id: "05",
-    title: "Elegance-Art",
-    path: "/lab/elegance-art",
-  },
-];
 
 export default function Homepage() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -61,7 +34,7 @@ export default function Homepage() {
   }, [cursorX, cursorY, isMobile]);
 
   return (
-    <main className="w-full bg-[#040406] text-[#ffffff] flex flex-col justify-between px-6 pt-10 pb-0 md:px-24 md:pt-16 md:pb-0  overflow-hidden select-none cursor-none relative">
+    <main className="w-full bg-[#040406] text-[#ffffff] flex flex-col justify-between px-6 pt-16 pb-0 md:px-24 md:pt-28 md:pb-0  overflow-hidden select-none cursor-none relative">
       
       {!isMobile && (
         <>
