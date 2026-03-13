@@ -1,8 +1,7 @@
 import React from 'react'
-import Footer from "../app/home/footer"
 import Navbar from "../app/home/navbar"
 import Home from "./home/hero"
-
+import Footer from "../app/home/footer"
 
 export default function page() {
   return (

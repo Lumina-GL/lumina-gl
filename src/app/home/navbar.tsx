@@ -8,7 +8,7 @@ export default function Navbar() {
 
       <header className="grid grid-cols-2 md:grid-cols-3 items-start z-10 w-full font-mono">
 
-        <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} className="space-y-2">
+        <motion.div initial={{ opacity: 0, y: -5 }} animate={{ opacity: 1, y: 0 }} className="space-y-2">
           <h1 className="font-bold tracking-tighter text-[14px] md:text-xl leading-none opacity-90 uppercase">
              Lumina-GL
           </h1>

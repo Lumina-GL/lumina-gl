@@ -34,7 +34,7 @@ export default function Homepage() {
   }, [cursorX, cursorY, isMobile]);
 
   return (
-    <main className="w-full bg-[#040406] text-[#ffffff] flex flex-col justify-between px-6 pt-16 pb-0 md:px-24 md:pt-28 md:pb-0  overflow-hidden select-none cursor-none relative">
+    <main className="w-full bg-[#040406] text-[#ffffff] flex flex-col justify-between px-6 pt-12 pb-0 md:px-24 md:pt-24 md:pb-0  overflow-hidden select-none cursor-none relative">
       
       {!isMobile && (
         <>

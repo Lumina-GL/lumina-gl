@@ -34,6 +34,7 @@ By offloading complex pixel-sorting and RGB shifting to custom **GLSL Fragment S
     <th style="border: 1px solid #1a1a1a; padding: 15px;">DIRECT LINK</th>
   </tr>
 
+    
    <tr>
     <td style="border: 1px solid #1a1a1a; padding: 20px;">
       <b>EXP 01 // Liquid Art Wave</b>
@@ -58,7 +59,18 @@ By offloading complex pixel-sorting and RGB shifting to custom **GLSL Fragment S
     </td>
   </tr>
   
-  
+     
+   <tr>
+    <td style="border: 1px solid #1a1a1a; padding: 20px;">
+      <b>EXP 03 // Spectral Echo</b>
+    </td>
+    <td style="border: 1px solid #1a1a1a; padding: 20px; color: #888;">
+      A chromatic wave distortion creating a ghostly interactive trail.
+    </td>
+    <td style="border: 1px solid #1a1a1a; padding: 20px;">
+      <a href="https://lumina-gl.sujitkoji.com/lab/spectral-echo"><b>[ VIEW DEMO ]</b></a>
+    </td>
+  </tr>
    
 </table>
 

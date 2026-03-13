@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <main className="w-full bg-[#040406] text-[#ffffff] flex flex-col justify-between px-6 p-4 md:px-8 md:py-7 lg:px-12 lg:py-8 overflow-hidden select-none cursor-none relative mt-auto">
 
-    <footer className="flex flex-col md:flex-row justify-between items-end gap-8 border-t border-white/5 pt-8 z-10">
+    <footer className="flex flex-col md:flex-row justify-between items-end gap-8 border-t border-white/5 pt-2 z-10">
     
         <div className="w-full md:max-w-[400px] space-y-6">
 

@@ -16,5 +16,12 @@ export const projects: project[] = [
     id: "02",
     title: "RGB-Displacement",
     path: "/lab/rgb-displacement",
-  }
+  },
+  {
+    id: "03",
+    title: "Spectral Echo",
+    path: "/lab/spectral-echo",
+  },
+
+
 ]
