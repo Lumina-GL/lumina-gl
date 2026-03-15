@@ -1,21 +1,14 @@
 "use client";
 import * as THREE from "three";
-import React, { useRef, useState, useEffect, useMemo } from "react";
+import React, { useRef, useState, useMemo } from "react";
 import { useFrame, extend, ThreeElement, useThree } from "@react-three/fiber";
 import { shaderMaterial, useTexture } from "@react-three/drei";
 
 import vertexShader from "../rgb-displacement/shaders/vertex.glsl";
 import fragmentShader from "../rgb-displacement/shaders/fragment.glsl";
 
-type ImageFadeMaterialType = THREE.ShaderMaterial & {
-  uTime: number;
-  uTexture: THREE.Texture;
-  uHover: number;
-  uMouse: THREE.Vector2;
-  uVelocity: number;
-};
 
-const ImageFadeMaterial = shaderMaterial(
+const RGBDisplacementMaterial = shaderMaterial(
   {
     uTime: 0,
     uTexture: new THREE.Texture(),
@@ -27,48 +20,38 @@ const ImageFadeMaterial = shaderMaterial(
   fragmentShader
 );
 
-extend({ ImageFadeMaterial });
+extend({ RGBDisplacementMaterial });
 
 declare module "@react-three/fiber" {
   interface ThreeElements {
-    imageFadeMaterial: ThreeElement<typeof ImageFadeMaterial>;
+    rgbdisplacementMaterial: ThreeElement<typeof RGBDisplacementMaterial>;
   }
 }
 
+type RGBDisplacementMaterialType = THREE.ShaderMaterial & {
+  uTime: number; uTexture: THREE.Texture; uHover: number; uMouse: THREE.Vector2; uVelocity: number;
+};
+
 export default function Scene() {
-  const meshRef =
-    useRef<THREE.Mesh<THREE.BufferGeometry, ImageFadeMaterialType>>(null!);
+  const meshRef = useRef<THREE.Mesh<THREE.BufferGeometry, RGBDisplacementMaterialType>>(null!);
 
   const [hovered, setHover] = useState(false);
+
+  const { viewport } = useThree();
+  const isMobile = viewport.width < 6;
 
   const mouse = useRef(new THREE.Vector2());
   const lastMouse = useRef(new THREE.Vector2());
   const velocity = useRef(0);
-
-  const { camera, gl, viewport } = useThree();
-  const isMobile = viewport.width < 6;
-
-
-  useEffect(() => {
-    camera.position.set(0, 0, isMobile ? 7 : 6);
-    camera.lookAt(0, 0, 0);
-  }, [camera, isMobile]);
-
-
-  useEffect(() => {
-    gl.setPixelRatio(Math.min(window.devicePixelRatio, isMobile ? 1.25 : 2));
-    gl.outputColorSpace = THREE.SRGBColorSpace;
-  }, [gl, isMobile]);
-
 
   const texture = useTexture(
     "/shader-img/rgb-displacement.jpeg"
   );
 
 
-  const scale = useMemo<[number, number, number]>(() => {
-    return isMobile ? [2.4, 3.2, 1] : [3.5, 4.5, 1];
-  }, [isMobile]);
+  const scale = useMemo<[number, number, number]>(() =>
+    isMobile ? [2.4, 3.2, 1] : [3.5, 4.5, 1],
+    [isMobile]);
 
 
   useFrame(({ clock, mouse: webglMouse }) => {
@@ -77,13 +60,11 @@ export default function Scene() {
     const dist = lastMouse.current.distanceTo(mouse.current);
     velocity.current = THREE.MathUtils.lerp(
       velocity.current,
-      Math.min(dist * 40, 1.5),
-      0.1
-    );
+      Math.min(dist * 40, 1.5), 0.1);
     lastMouse.current.copy(mouse.current);
 
-    if (!meshRef.current) return;
-
+    if (!meshRef.current)
+      return;
     const mat = meshRef.current.material;
     mat.uTime = clock.getElapsedTime();
     mat.uHover = THREE.MathUtils.lerp(mat.uHover, hovered ? 1 : 0, 0.08);
@@ -97,21 +78,18 @@ export default function Scene() {
     );
     meshRef.current.rotation.x = THREE.MathUtils.lerp(
       meshRef.current.rotation.x,
-      -mouse.current.y * (isMobile ? 0.15 : 0.3),
-      0.1
-    );
+      -mouse.current.y * (isMobile ? 0.15 : 0.3), 0.1);
   });
 
   return (
     <mesh
       ref={meshRef}
       scale={scale}
-      position={[0, isMobile ? 0.15 : 0.0, 0]}
       onPointerOver={() => setHover(true)}
       onPointerOut={() => setHover(false)}
     >
-      <planeGeometry args={[1.6, 1.7, isMobile ? 32 : 64, isMobile ? 32 : 64]} />
-      <imageFadeMaterial uTexture={texture} transparent />
+      <planeGeometry args={[1, 1, isMobile ? 32 : 64, isMobile ? 32 : 64]} />
+      <rgbdisplacementMaterial uTexture={texture} transparent />
     </mesh>
   );
 }

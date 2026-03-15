@@ -13,7 +13,7 @@
 
 <br/>
 
-![Header](https://github.com/sujitkoji/lumina-gl/blob/main/public/lumina-gl.png?raw=true)
+![Header](https://github.com/sujitkoji/lumina-gl/blob/main/public/lumina-gl.png?raw=true) 
 
 ---
 
@@ -71,6 +71,18 @@ By offloading complex pixel-sorting and RGB shifting to custom **GLSL Fragment S
       <a href="https://lumina-gl.sujitkoji.com/lab/spectral-echo"><b>[ VIEW DEMO ]</b></a>
     </td>
   </tr>
+
+  <tr>
+    <td style="border: 1px solid #1a1a1a; padding: 20px;">
+      <b>EXP 04 // Elegance</b>
+    </td>
+    <td style="border: 1px solid #1a1a1a; padding: 20px; color: #888;">
+      Elegance wave - an organic glsl simulation.
+    </td>
+    <td style="border: 1px solid #1a1a1a; padding: 20px;">
+      <a href="https://lumina-gl.sujitkoji.com/lab/elegance"><b>[ VIEW DEMO ]</b></a>
+    </td>
+  </tr>
    
 </table>
 
@@ -118,19 +130,33 @@ The distortion is achieved by sampling the texture three times with a progressiv
 
 ```mermaid
 graph LR
-    A[Mouse Interaction] --> B{Velocity Calc}
-    B -->|Delta > 0| C[uVelocity Uniform]
-    C --> D[Fragment Shader]
-    D --> E[RGB Channel Offset]
-    E --> F[Chromatic Aberration]
-    style A fill:#000,stroke:#fff,stroke-width:1px
-    style D fill:#111,stroke:#FF3366,stroke-width:2px
+    A[Interaction] --> B{Velocity}
+    B --> C[Uniforms]
+    C --> D[GLSL Shader]
+    D --> E[Chromatic Aberration]
+    
+    style A fill:#000,stroke:#fff
+    style D fill:#FF3366,stroke:#fff,stroke-width:2px
+    style E color:#FF3366
 
 ```
 
 ### / PERFORMANCE STRATEGY
 
 `LERP SMOOTHING` • `FRUSTUM CULLING` • `GPU POWER PREFERENCE` • `DPR MANAGEMENT`
+
+
+---
+
+### / LICENSE & USAGE
+
+This project is a **Technical Study** and is intended for **Educational Purposes** only. 
+
+- **Code:** Licensed under the [MIT License](LICENSE). Feel free to explore, learn, and fork.
+- **Assets:** The images and textures used in the demos belong to their respective creators. No commercial use is permitted for the assets within this repository.
+- **Intent:** This is a non-commercial laboratory. If you use the shader logic in your projects, a credit back to **LUMINA-GL** would be appreciated.
+
+---
 
 ### / CREDITS
 

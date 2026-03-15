@@ -28,7 +28,7 @@ export default function Overlay() {
     >
       <motion.nav variants={fadeUp} className="flex justify-between items-start font-mono text-[10px] tracking-[0.3em]">
         <div className="font-bold">AETHER.STUDIO</div>
-        <div className="opacity-50 md:block hidden">PROJECTS / 2026 — VOL. 1</div>
+        <div className="opacity-50 md:block hidden">PROJECTS / 2026 - VOL. 1</div>
       </motion.nav>
 
       <div className="relative">
@@ -51,7 +51,7 @@ export default function Overlay() {
           <p>Status: Interactive / WebGL</p>
         </div>
         <div className="flex gap-6 text-[10px] font-bold tracking-tighter italic">
-          <span>001 — 26</span>
+          <span>001 - 26</span>
           <span className="opacity-20">/</span>
           <span>AWARDS NOMINEE</span>
         </div>

@@ -14,7 +14,7 @@ export default function ClientLab({ Component }: ClientLabProps) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-     const lenis = new Lenis({ duration: 0.8, smooth: true });
+     const lenis = new Lenis({ duration: 0.8 });
 
     function raf(time: number) {
       lenis.raf(time);

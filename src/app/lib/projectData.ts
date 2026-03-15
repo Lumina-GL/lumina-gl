@@ -3,6 +3,7 @@ import type { ComponentType } from "react";
 import Liquid_Art_Wave from "../projects/liquid-art-wave/page";
 import Rgb_Displacement from "../projects/rgb-displacement/page";
 import Spectral_Echo from "../projects/spectral-echo/page";
+import Elegance from "../projects/elegance/page";
 
 
 
@@ -36,5 +37,12 @@ export const projects: Lab[] = [
     preview: `/shader-img/spectral-echo.jpeg`,
     component: Spectral_Echo,
   },
+
+  {
+    title: "Elegance",
+    slug: slugify("Elegance", { lower: true }),
+    preview: `/previews/elegance.png`,
+    component: Elegance,
+  }
 
 ];

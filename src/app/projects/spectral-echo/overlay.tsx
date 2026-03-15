@@ -5,13 +5,13 @@ export default function Overlay() {
   return (
     <div className="fixed inset-0 z-10 pointer-events-none text-white font-sans">
       
-      <div className="absolute inset-0 flex items-center justify-center opacity-[0.03] select-none">
-        <h1 className="text-[22vw] font-black italic">
+      <div className="absolute inset-0 flex items-center justify-center opacity-[0.05] select-none">
+        <h1 className="text-[16vw] font-black italic">
         SPECTRAL
         </h1>
       </div>
 
-      <header className="absolute top-0 w-full p-8 flex justify-between text-[10px] tracking-[0.3em] uppercase opacity-60">
+      <header className="absolute top-0 w-full p-8 flex justify-between text-[10px] tracking-[0.3em] uppercase">
         <p>
         Lab Experiment / 001
         </p>
@@ -34,16 +34,16 @@ export default function Overlay() {
           </h2>
           <div className="mt-6 flex items-center gap-4">
             <span className="w-12 h-[1px] bg-white opacity-30"></span>
-            <p className="text-[10px] uppercase tracking-widest opacity-50 max-w-xs">
+            <p className="text-[10px] uppercase tracking-widest opacity-70 max-w-xs">
               Fluid-dynamic distortion exploring botanical fragility.
             </p>
           </div>
         </motion.div>
       </div>
 
-      <div className="absolute bottom-12 right-12 hidden lg:block text-right opacity-30">
+      <div className="absolute bottom-12 right-12 hidden lg:block text-right opacity-90">
         <p className="text-[9px] uppercase tracking-[0.2em] [writing-mode:vertical-rl]">
-          Scroll to Explore — Flow 0.1
+          Scroll to Explore - Flow 0.1
         </p>
       </div>
     </div>

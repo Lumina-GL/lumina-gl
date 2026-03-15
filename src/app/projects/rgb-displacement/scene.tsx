@@ -9,7 +9,7 @@ export default function Scene() {
     return (
         <>
             <Canvas
-                camera={{ position: [0, 4, 2], far: 50 }}
+                camera={{ fov: 45, near: 0.1, far: 100, position: [0, 0, 6] }}
                 style={{ width: "100vw", height: "100vh" }}
                 dpr={[1, 2]}
                 gl={{

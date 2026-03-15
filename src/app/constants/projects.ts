@@ -23,5 +23,11 @@ export const projects: project[] = [
     path: "/lab/spectral-echo",
   },
 
+  {
+    id : "04",
+    title: "Elegance",
+    path: "/lab/elegance",
+  }
+
 
 ]
