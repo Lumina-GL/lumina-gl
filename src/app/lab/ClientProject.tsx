@@ -1,7 +1,7 @@
  "use client";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import Lenis from "@studio-freight/lenis";
+import Lenis from 'lenis';
 import type { Lab } from "@/app/lib/projectData";
 import type { ComponentType } from "react";
 

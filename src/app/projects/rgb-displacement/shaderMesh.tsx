@@ -8,7 +8,7 @@ import vertexShader from "../rgb-displacement/shaders/vertex.glsl";
 import fragmentShader from "../rgb-displacement/shaders/fragment.glsl";
 
 
-const RGBDisplacementMaterial = shaderMaterial(
+const RgbDisplacementMaterial = shaderMaterial(
   {
     uTime: 0,
     uTexture: new THREE.Texture(),
@@ -20,20 +20,20 @@ const RGBDisplacementMaterial = shaderMaterial(
   fragmentShader
 );
 
-extend({ RGBDisplacementMaterial });
+extend({ RgbDisplacementMaterial });
 
 declare module "@react-three/fiber" {
   interface ThreeElements {
-    rgbdisplacementMaterial: ThreeElement<typeof RGBDisplacementMaterial>;
+    rgbDisplacementMaterial: ThreeElement<typeof RgbDisplacementMaterial>;
   }
 }
 
-type RGBDisplacementMaterialType = THREE.ShaderMaterial & {
+type RgbDisplacementMaterialType = THREE.ShaderMaterial & {
   uTime: number; uTexture: THREE.Texture; uHover: number; uMouse: THREE.Vector2; uVelocity: number;
 };
 
 export default function Scene() {
-  const meshRef = useRef<THREE.Mesh<THREE.BufferGeometry, RGBDisplacementMaterialType>>(null!);
+  const meshRef = useRef<THREE.Mesh<THREE.BufferGeometry, RgbDisplacementMaterialType>>(null!);
 
   const [hovered, setHover] = useState(false);
 
@@ -89,7 +89,7 @@ export default function Scene() {
       onPointerOut={() => setHover(false)}
     >
       <planeGeometry args={[1, 1, isMobile ? 32 : 64, isMobile ? 32 : 64]} />
-      <rgbdisplacementMaterial uTexture={texture} transparent />
+      <rgbDisplacementMaterial uTexture={texture} transparent />
     </mesh>
   );
 }
