@@ -83,6 +83,18 @@ By offloading complex pixel-sorting and RGB shifting to custom **GLSL Fragment S
       <a href="https://lumina-gl.sujitkoji.com/lab/elegance"><b>[ VIEW DEMO ]</b></a>
     </td>
   </tr>
+
+  <tr>
+    <td style="border: 1px solid #1a1a1a; padding: 20px;">
+      <b>EXP 05 // Image Alchemy</b>
+    </td>
+    <td style="border: 1px solid #1a1a1a; padding: 20px; color: #888;">
+      Converting static pixels into liquid visual poetry.
+    </td>
+    <td style="border: 1px solid #1a1a1a; padding: 20px;">
+      <a href="https://lumina-gl.sujitkoji.com/lab/image-alchemy"><b>[ VIEW DEMO ]</b></a>
+    </td>
+  </tr>
    
 </table>
 

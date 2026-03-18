@@ -19,15 +19,18 @@ export const projects: project[] = [
   },
   {
     id: "03",
-    title: "Spectral Echo",
+    title: "Spectral-Echo",
     path: "/lab/spectral-echo",
   },
-
   {
     id : "04",
     title: "Elegance",
     path: "/lab/elegance",
+  },
+  {
+    id: "05",
+    title: "Image Alchemy",
+    path: "/lab/image-alchemy",
   }
-
 
 ]

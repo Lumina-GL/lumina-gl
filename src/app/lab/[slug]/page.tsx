@@ -12,77 +12,59 @@ export async function generateMetadata({ params }: LabPageProps): Promise<Metada
   const { slug } = await params;
   const lab = projects.find((p) => p.slug === slug);
 
-  // 🧩 If project not found
   if (!lab) {
     return {
-      title: "Project Not Found | SujitKoji",
-      description:
-        "The requested project could not be found. Explore premium 3D web experiences using React Three Fiber, WebGL, and GLSL shader projects on SujitKoji.",
-      robots: {
-        index: false,
-        follow: false,
-      },
+      title: "Experiment Not Found | Lumina-GL",
+      description: "Explore the bleeding edge of WebGL and GLSL shaders at SujitKoji's technical laboratory.",
+      robots: { index: false, follow: false },
     };
   }
 
-  // 🧠 Dynamic SEO values
-  const siteUrl = `https://sujitkoji.vercel.app/lab/${lab.slug}`;
-  const siteImage = lab.preview || "https://sujitkoji.vercel.app/og/default-og.jpg";
-  const siteTitle = `${lab.title} | SujitKoji`;
+  const siteUrl = `https://lumina-gl.sujitkoji.com/lab/${lab.slug}`;
+  const siteImage = lab.preview || "/og-image.png"; 
+  const displayTitle = `${lab.title} - High-End WebGL Experiment`;
+  const displayDesc = `${lab.description || `A premium ${lab.title} visual experiment built with R3F and Custom GLSL Shaders.`} Part of Lumina-GL by @sujitkoji.`;
 
-  // 🚀 SEO-optimized metadata (fixed kebab-case keys)
   return {
-    title: siteTitle,
+    title: displayTitle,
+    description: displayDesc,
+    metadataBase: new URL("https://lumina-gl.sujitkoji.com"),
     alternates: {
       canonical: siteUrl,
     },
-    metadataBase: new URL("https://sujitkoji.vercel.app"),
+    keywords: [
+      ...(lab.tags || []), 
+      "Lumina-GL", "WebGL Shader Lab", "Creative Coding India", 
+      "Next.js 15", "React Three Fiber", "Awwwards Style Web", "GSAP Motion"
+    ],
     openGraph: {
-      title: siteTitle,
+      title: displayTitle,
+      description: displayDesc,
       url: siteUrl,
-      siteName: "sujitkoji",
+      siteName: "Lumina-GL | SujitKoji",
       type: "article",
-      locale: "en_US",
+      publishedTime: new Date().toISOString(),
+      authors: ["Sujit Kumar"],
       images: [
         {
           url: siteImage,
           width: 1200,
           height: 630,
-          alt: `${lab.title} | sujitkoji`,
+          alt: `Cinematic preview of ${lab.title} experiment`,
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
-      title: siteTitle,
+      title: displayTitle,
+      description: displayDesc,
       images: [siteImage],
       creator: "@sujitkoji",
     },
-    keywords: [
-      "Three.js",
-      "GLSL shader",
-      "WebGL",
-      "React Three Fiber",
-      "3D shaders",
-      "procedural graphics",
-      "KojiLab",
-      "ShaderToy style",
-      "visual effects",
-      "real-time rendering",
-      "3D portfolio",
-      "creative coding",
-      "JavaScript shaders",
-      "custom GLSL",
-    ],
-    robots: {
-      index: true,
-      follow: true,
-      "max-snippet": -1,
-      "max-image-preview": "large",
-      "max-video-preview": -1,
+    other: {
+      "apple-mobile-web-app-capable": "yes",
+      "format-detection": "telephone=no",
     },
-    authors: [{ name: "sujitkoji", url: "https://sujitkoji.vercel.app" }],
-    category: "3D Web Development",
   };
 }
 
