@@ -9,11 +9,11 @@
 
 **A curated laboratory of high-end image distortion techniques, exploring the boundaries of Chromatic Aberration, Fluid Dynamics, and Kinetic Momentum.**
 
-[ [LAUNCH GALLERY](https://lumina-gl.sujitkoji.com/) ] &nbsp; • &nbsp; [ [SOURCE CODE](https://github.com/sujitkoji/lumina-gl) ]
+[ [LAUNCH GALLERY](https://lumina-gl.sujitkoji.com/) ] &nbsp; • &nbsp; [ [SOURCE CODE](https://github.com/Lumina-GL/lumina-gl) ]
 
 <br/>
 
-![Header](https://github.com/sujitkoji/lumina-gl/blob/main/public/lumina-gl.png?raw=true) 
+![Header](https://raw.githubusercontent.com/Lumina-GL/lumina-gl/refs/heads/main/public/lumina-gl.png) 
 
 ---
 
@@ -74,7 +74,19 @@ By offloading complex pixel-sorting and RGB shifting to custom **GLSL Fragment S
 
   <tr>
     <td style="border: 1px solid #1a1a1a; padding: 20px;">
-      <b>EXP 04 // Elegance</b>
+      <b>EXP 04 // Organic Morphism</b>
+    </td>
+    <td style="border: 1px solid #1a1a1a; padding: 20px; color: #888;">
+      A touch or mouse move creates ripples, noise, or distortion, making the screen feel like a physical surface.
+    </td>
+    <td style="border: 1px solid #1a1a1a; padding: 20px;">
+      <a href="https://lumina-gl.sujitkoji.com/lab/organic-morphism"><b>[ VIEW DEMO ]</b></a>
+    </td>
+  </tr>
+
+  <tr>
+    <td style="border: 1px solid #1a1a1a; padding: 20px;">
+      <b>EXP 05 // Elegance</b>
     </td>
     <td style="border: 1px solid #1a1a1a; padding: 20px; color: #888;">
       Elegance wave - an organic glsl simulation.
@@ -86,7 +98,7 @@ By offloading complex pixel-sorting and RGB shifting to custom **GLSL Fragment S
 
   <tr>
     <td style="border: 1px solid #1a1a1a; padding: 20px;">
-      <b>EXP 05 // Image Alchemy</b>
+      <b>EXP 06 // Image Alchemy</b>
     </td>
     <td style="border: 1px solid #1a1a1a; padding: 20px; color: #888;">
       Converting static pixels into liquid visual poetry.

@@ -5,7 +5,6 @@ export type project = {
 }
 
 export const projects: project[] = [
-
   
   {
     id: "01",
@@ -23,14 +22,20 @@ export const projects: project[] = [
     path: "/lab/spectral-echo",
   },
   {
-    id : "04",
+    id: "04",
+    title: "Organic Morphism",
+    path: "/lab/organic-morphism",
+  },
+  {
+    id : "05",
     title: "Elegance",
     path: "/lab/elegance",
   },
   {
-    id: "05",
+    id: "06",
     title: "Image Alchemy",
     path: "/lab/image-alchemy",
-  }
+  },
+  
 
 ]

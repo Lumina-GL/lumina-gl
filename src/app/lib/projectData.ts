@@ -3,6 +3,7 @@ import type { ComponentType } from "react";
 import Liquid_Art_Wave from "../projects/liquid-art-wave/page";
 import Rgb_Displacement from "../projects/rgb-displacement/page";
 import Spectral_Echo from "../projects/spectral-echo/page";
+import Organic_Morphism from "../projects/organic-morphism/page";
 import Elegance from "../projects/elegance/page";
 import Image_Alchemy from "../projects/image-alchemy/page";
 
@@ -41,6 +42,14 @@ export const projects: Lab[] = [
     tags: ["Spectral Rendering", "Interactive Trail", "Time-based Wave", "Custom Shaders", "Visual Persistence"],
     component: Spectral_Echo,
   },
+   {
+    slug: slugify("Organic Morphism", { lower: true }),
+    title: "Organic Morphism",
+    description: "A touch or mouse move creates ripples, noise, or distortion, making the screen feel like a physical surface.",
+    preview: '/shader-img/organic-morphism.avif',
+    tags: ["Image Refraction", "Glassmorphism", "Texture Mapping", "Liquid Art", "Interactive Shader"],
+    component: Organic_Morphism,
+  },
   {
     slug: slugify("Elegance", { lower: true }),
     title: "Elegance",
@@ -56,5 +65,6 @@ export const projects: Lab[] = [
     preview: `/previews/image-alchemy.png`,
     tags: ["Image Refraction", "Glassmorphism", "Texture Mapping", "Liquid Art", "Interactive Shader"],
     component: Image_Alchemy,
-  }
+  },
+ 
 ];
